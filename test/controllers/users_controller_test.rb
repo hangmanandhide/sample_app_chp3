@@ -1,4 +1,6 @@
 require 'test_helper'
+require "minitest/reporters"
+Minitest::Reporters.use!
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do

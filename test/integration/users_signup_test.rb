@@ -1,4 +1,6 @@
 require 'test_helper'
+require "minitest/reporters"
+Minitest::Reporters.use!
 
   class UsersSignupTest < ActionDispatch::IntegrationTest
 
@@ -27,6 +29,8 @@ require 'test_helper'
     follow_redirect!
     assert_template 'users/show'
     assert_not flash.alert
+    assert is_logged_in?
+
 
   end
 
