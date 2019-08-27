@@ -21,7 +21,11 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
+
+  #OLD___ config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  #NEW___  config.public_file_server.enabled = true
+
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
@@ -92,7 +96,7 @@ Rails.application.configure do
 
   # sendgrid configs
 
-    config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   host = '<your heroku app>.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
